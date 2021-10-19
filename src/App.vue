@@ -1,13 +1,6 @@
 <template>
-  <div id="container">
-    <!-- <div id="app">
-      <img alt="Vue logo" src="./assets/logo.png">
-      <HelloWorld msg="Welcome to Your Vue.js App"/>
-    </div> -->
-
-    <div id="sidebar">
-      <p v-for="index in 10" :key="index">sidebar</p>
-    </div>
+  <div id="app">
+    <Sidebar id="sidebar" />
     <div id="main-content">
       <p v-for="index in 100" :key="index">main content</p>
     </div>
@@ -15,28 +8,29 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import Sidebar from './components/Sidebar.vue';
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld
+    Sidebar,
   },
 };
 </script>
 
-<style>
-#container {
+<style scoped>
+#app {
   display: flex;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
   #sidebar {
     flex-grow: 1;
     height: 100vh;
     overflow-y: scroll;
+    border-right: dashed #808080;
   }
 
   #main-content {
@@ -46,8 +40,8 @@ export default {
   }
 }
 
-@media (max-width: 1200px) {
-  #container {
+@media (max-width: 800px) {
+  #app {
     flex-direction: column;
   }
 }

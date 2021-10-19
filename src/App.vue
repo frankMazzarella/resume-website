@@ -6,10 +6,10 @@
     </div> -->
 
     <div id="sidebar">
-      sidebar
+      <p v-for="index in 10" :key="index">sidebar</p>
     </div>
     <div id="main-content">
-      main content
+      <p v-for="index in 100" :key="index">main content</p>
     </div>
   </div>
 </template>
@@ -26,33 +26,24 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
 #container {
   display: flex;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-#sidebar {
-  flex-grow: 1;
-  border: solid;
-  border-width: 4px;
-  border-color: red;
-}
+@media (min-width: 1200px) {
+  #sidebar {
+    flex-grow: 1;
+    height: 100vh;
+    overflow-y: scroll;
+  }
 
-#main-content {
-  flex-grow: 4;
-  border: solid;
-  border-width: 4px;
-  border-color: red;
+  #main-content {
+    flex-grow: 4;
+    height: 100vh;
+    overflow-y: scroll;
+  }
 }
 
 @media (max-width: 1200px) {

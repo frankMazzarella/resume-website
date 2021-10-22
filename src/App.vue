@@ -2,18 +2,41 @@
   <div id="app">
     <Sidebar id="sidebar" />
     <div id="main-content">
-      <p v-for="index in 100" :key="index">main content</p>
+      <Bio />
+      <bullet-point-box :title="skills.description" :bulletpoints="skills.list" />
+      <bullet-point-box :title="jobs.description" :bulletpoints="jobs.list" />
     </div>
   </div>
 </template>
 
 <script>
 import Sidebar from './components/Sidebar.vue';
+import Bio from './components/Bio.vue';
+import BulletPointBox from './components/BulletPointBox.vue';
 
 export default {
   name: 'App',
+  data: () => ({
+    skills: {
+      description: 'Skills I Provide',
+      list: [
+        'skill one',
+        'skill two',
+        'skill three',
+      ],
+    },
+    jobs: {
+      description: 'Jobs I Want',
+      list: [
+        'job one',
+        'job two',
+      ],
+    },
+  }),
   components: {
     Sidebar,
+    Bio,
+    BulletPointBox,
   },
 };
 </script>
@@ -27,16 +50,13 @@ export default {
 
 @media (min-width: 800px) {
   #sidebar {
-    flex-grow: 1;
     height: 100vh;
-    overflow-y: scroll;
     border-right: dashed #808080;
   }
 
   #main-content {
-    flex-grow: 4;
     height: 100vh;
-    overflow-y: scroll;
+    overflow: scroll;
   }
 }
 

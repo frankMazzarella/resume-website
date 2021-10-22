@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar">
+  <div>
     <img id="headshot" alt="Headshot" src="../assets/headshot.png" />
     <h1>Frank Mazzarella</h1>
     <h3>Scranton, PA</h3>
@@ -29,32 +29,14 @@ export default {
 </script>
 
 <style scoped>
-/* @media (max-width: 800px) { */
-/* TODO: should this be in media query?? idk */
-  #sidebar {
-    width: 400px;
-    margin: 0 auto;
-  }
-/* } */
-
 #headshot {
-  margin-top: 50px;
+  margin: 50px 10px 0;
   width: 250px;
   height: 250px;
   border-radius: 35%;
 }
 
-h1, h3 {
-  margin: 0;
-}
-
-ul {
-  margin-top: 10px;
-  padding-left: 80px;
+li {
   text-align: left;
-}
-
-button {
-  margin-bottom: 10px;
 }
 </style>
